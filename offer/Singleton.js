@@ -1,4 +1,5 @@
 //使用js实现一个单例
+
 //ES5的做法
 // function Singleton (name, sex) {
 //     if (Singleton.real) {//如果已经被实例化了，那就直接返回这个实例
@@ -13,7 +14,13 @@
 //     Singleton.real = this
 //     return this
 // }
-//ES6语法
+
+/**
+ * 单例类
+ * 
+ * 
+ * @class Singleton
+ */
 class Singleton {
     constructor(name, sex) {
         if (Singleton.real){
@@ -24,7 +31,17 @@ class Singleton {
         Singleton.real = this
     }
 }
-
+//单例测试
+/*{
+    let me = new Singleton("杨念", "男")
+    console.log(me.name)
+    console.log(me.sex)
+    console.log("++++++++++++")
+    let you = new Singleton("小念", 22)//这里有实例化了一个对象，但是没有效果，始终都会返回第一次实例的对象
+    console.log(me.name)
+    console.log(me.sex)
+}
+*/
 
 exports.Singleton = Singleton
 

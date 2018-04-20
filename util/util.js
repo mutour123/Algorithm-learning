@@ -43,6 +43,36 @@ exports.util = {
      */
     swap(x, y){
         return [y, x]
+    },
+    /**
+     * 深拷贝
+     * 
+     * @param {any} obj 
+     * @returns 
+     */
+    deepCopy(obj){
+        if(typeof obj != 'object'){
+            return
+        }
+        let newObj;
+        if(obj instanceof Array){
+            newObj = []
+        }else{
+            newObj = {}
+        }
+
+        for(let key in obj) {
+            if( typeof obj[key] != 'object'){
+                newObj[key] = obj[key]
+            }else{
+                if(obj[key] == null){
+                    obj[key] = null
+                }else{
+                    newObj[key] = this.deepCopy(obj[key])
+                }
+            }
+        }
+        return newObj
     }
    
 }

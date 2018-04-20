@@ -3,10 +3,16 @@ const Singleton = require('./offer/Singleton').Singleton
 const FindeRepeating = require('./offer/arrayDeweighting').FindeRepeating
 const Util = require('./util/util').util
 
-//数组找重复测试
-
-// array = [ 1, 3, 3, 6, 6, 8, 5, 0, 4, 9 ]
-
+const twoPoints = require('./offer/twoPoints').twoPoints
+//二分查询
+console.time("time1")
+let arr = Util.getOrderArray(100000000)
+console.timeEnd("time1")
+let target = 55
+console.time("time:")
+let result = twoPoints(arr, target)
+console.log(result)
+console.timeEnd("time:")
 
 
 

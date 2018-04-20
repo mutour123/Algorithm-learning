@@ -23,6 +23,19 @@ exports.util = {
         return array
     },
     /**
+     * 得到一个顺序数组
+     * 
+     * @param {any} int 范围
+     * @returns 
+     */
+    getOrderArray(int){
+        const arr = []
+        for(let i = 0; i < int; i++){
+            arr[i] = i
+        } 
+        return arr
+    },
+    /**
      * 用于交换两个引用变量的值
      * 
      * @param {any} x 
